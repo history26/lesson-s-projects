@@ -1,5 +1,8 @@
 # SM2 with RFC6979
 **SM2实现**  
+本项目中有关sm2算法实现原理参考了  
+https://blog.csdn.net/samsho2/article/details/80772228
+https://blog.csdn.net/weixin_44885334/article/details/121994537
 # 运行要求   
 下载安装gmpy2库;  
 将所有文件放入同一文件夹中;  
