@@ -18,7 +18,7 @@ sm3轮函数中内置的函数Tj,FF,GG,逻辑较为简单，GG因为包含了二
 ![image](https://user-images.githubusercontent.com/96007188/181723893-d5e2676a-2220-4f2b-ab84-095eef909bda.png)  
 ![5}Q3I7Z$ PD23V)%TC$ _KG](https://user-images.githubusercontent.com/96007188/181729836-c55c96f8-b50e-4f15-bb19-bd7c460c42bb.png)  
 
-sm3杂凑函数
+调用sm3时用的函数  
 ![image](https://user-images.githubusercontent.com/96007188/181724296-d726f277-3156-42a8-8e27-6f6c057f4def.png)  
 简易生日攻击部分，首先选取2^(n/2)个随机数，然后遍历检查它们中是否存在两个数的杂凑值的前n位相等，存在则攻击成功，并且输出结果。  
 ![8)C@J~KJZ{SJXR4WD(1U~ Y](https://user-images.githubusercontent.com/96007188/181724975-94c9015d-1adf-4c66-9205-ecd6205be361.png)  
