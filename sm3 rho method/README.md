@@ -1,3 +1,2 @@
-#sm3 birthday attack  
-此项目为sm3算法的运用rhomethod的攻击  
-##函数中代码说明：
+#sm3 rho method  
+此项目为对sm3算法运用rho method寻找一个循环。
