@@ -1,7 +1,7 @@
 # sm3 birthday attack
 此项目为sm3算法的naive birthday attack的实现。其中也包括sm3算法本体的实现。
 函数中代码说明：
-![VU OGA`A7F0MSZ4M0ZV6`TX](https://user-images.githubusercontent.com/96007188/181716475-bac63304-5619-40a7-9cb4-2ad3c5444830.png)
+![VU OGA`A7F0MSZ4M0ZV6`TX](https://user-images.githubusercontent.com/96007188/181716475-bac63304-5619-40a7-9cb4-2ad3c5444830.png) 
 此函数为将整数转化为指定位数的二进制数的函数，方便了用户直接输入和取随机数作为输入。
 ![4WI8XY2~4$U6K~F}43SFM`3](https://user-images.githubusercontent.com/96007188/181718745-e651fee6-8341-45f3-bdc5-fd741e9d458a.png)
 将整数转化为二进制并左移s位的函数。
