@@ -12,6 +12,7 @@ https://blog.csdn.net/weixin_44885334/article/details/121994537
 *SM3加密函数*
 SM3加密算法共分为四个步骤:消息填充、消息扩展、迭代压缩、输出密文  
 ![图片](https://user-images.githubusercontent.com/96277679/181663267-4502f523-0269-4ea5-9047-4f35088543fa.png)  
+**椭圆曲线上的基本运算**
 *椭圆曲线上的点加*  
 ![图片](https://user-images.githubusercontent.com/96277679/181663456-7317bbce-d2e8-4f80-916f-f3735eb8e48c.png)  
 *椭圆曲线上的点乘*  
@@ -40,8 +41,19 @@ SM3加密算法共分为四个步骤:消息填充、消息扩展、迭代压缩�
 # 数字签名（签名.py文件中实现）  
 **原理**  
 *签名*   
+签名者用户A的密钥对包括其私钥dA和公钥PA=[dA]G= (xA,yA)  
+1  签名者用户A具有长度为entlenA比特的可辨别标识IDA，  
+2  ENTLA是由整数entlenA转换而成的两个字节  
+3  ZA=H256(ENTLA || IDA || a || b || xG || yG|| xA || yA)。  
+4  待签名的消息为M，  
+5  数字签名(r,s)  
 ![图片](https://user-images.githubusercontent.com/96277679/181664647-f0952a6b-edd8-4278-8ef1-c127ef47d679.png)    
 *验证*  
+1  签名者用户A的密钥对包括其私钥dA和公钥PA=[dA]G= (xA,yA)  
+2  签名者用户A具有长度为entlenA比特的可辨别标识IDA，  
+3  ENTLA是由整数entlenA转换而成的两个字节    
+4  ZA=H256(ENTLA || IDA || a || b || xG || yG|| xA || yA)。  
+5  消息为M，数字签名(r,s)  
 ![图片](https://user-images.githubusercontent.com/96277679/181664717-8d1a96f0-b682-4234-9c71-047d27dffb2f.png)  
 实现签名的关键  
 (x′1; y′1)  
@@ -69,7 +81,7 @@ SM3加密算法共分为四个步骤:消息填充、消息扩展、迭代压缩�
 成功实现验证 
 # 密钥交换（密钥交换.py文件中实现） 
 **原理**  
-*计算摘要*  
+*计算摘要*
 ![图片](https://user-images.githubusercontent.com/96277679/181668086-ce5274f0-4fc7-487c-b293-08f3e2516a57.png)  
 生成交换数据  
 ![图片](https://user-images.githubusercontent.com/96277679/181668299-100c24b8-8d0f-47be-87c9-f8839a1712a9.png)  
@@ -77,15 +89,24 @@ SM3加密算法共分为四个步骤:消息填充、消息扩展、迭代压缩�
 ![图片](https://user-images.githubusercontent.com/96277679/181668437-d7a854ac-a716-4526-8183-2015afccb9f3.png)  
 协商密钥确认  
 ![图片](https://user-images.githubusercontent.com/96277679/181668491-97b47066-1f12-402f-b607-ae7be7ce46bd.png)  
+本次算法以用户A向用户B发起密钥交换为例,算法原理为  
+用户A执行  
+![图片](https://user-images.githubusercontent.com/96277679/181777063-2cde112e-e731-491e-bc8a-43d21dd8f8fd.png)  
+用户B执行  
+![图片](https://user-images.githubusercontent.com/96277679/181777131-73ddd6b0-7a7e-4e19-9c82-af322732a6c3.png)  
+用户A执行  
+![图片](https://user-images.githubusercontent.com/96277679/181777183-d2dcb54c-cb49-4fce-9ab6-41fd0fcfe5af.png)  
+用户B执行  
+![图片](https://user-images.githubusercontent.com/96277679/181777248-9b91f6b8-5a2a-4d7d-8bd8-a0230393c0ac.png)  
 **算法实现**  
 用户A生成交换数据  
-![图片](https://user-images.githubusercontent.com/96277679/181669149-10d66c7f-484e-4fe0-850f-ee547435e844.png)  
+![图片](https://user-images.githubusercontent.com/96277679/181778490-2bae7e28-50d6-47a7-8353-5cda9f54b53a.png)    
 用户B由交换数据生成交换密钥  
-![图片](https://user-images.githubusercontent.com/96277679/181669250-9e39aa38-7df6-4441-b3c4-4ff97055afc0.png)  
+![图片](https://user-images.githubusercontent.com/96277679/181778548-4dc08928-7ef7-4e4c-86d9-74724a507a4f.png)  
 用户A生成交换密钥  
-![图片](https://user-images.githubusercontent.com/96277679/181669486-1c391ab6-b4aa-4e85-a3bc-5bbb5da1f136.png)  
+![图片](https://user-images.githubusercontent.com/96277679/181778619-e52dc3e8-2055-44a1-99c5-e5621e4e7626.png)    
 用户B进行验证  
-![图片](https://user-images.githubusercontent.com/96277679/181669552-2fbcc4a2-e51e-449e-89bf-c22d84993c5b.png)  
+![图片](https://user-images.githubusercontent.com/96277679/181778644-4321a74a-1792-408f-a58a-e1f164bfc9b9.png)    
 **运行结果**  
 选取给定的标准参数，同时设置用户A，B的ID为不同的默认ID  
 ![图片](https://user-images.githubusercontent.com/96277679/181669650-6b32bac8-b148-4e37-968f-064cad847b31.png)  
