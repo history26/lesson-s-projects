@@ -16,7 +16,7 @@ ECMH体系下的SM2加密实现，基本原理与SM2加密实现原理相同，�
 ![图片](https://user-images.githubusercontent.com/96277679/181739016-9f164abe-5245-4815-8f61-deca0b1f36cc.png)  
 以集合元素作为曲线点进行哈希  
 ![图片](https://user-images.githubusercontent.com/96277679/181739209-8e3fcb5e-38cf-4bcb-8c58-988e09ca2210.png)  
-#运行结果  
+# 运行结果  
 参数选取如下（给定标准参数）  
 ![图片](https://user-images.githubusercontent.com/96277679/181740236-c06d68be-02dd-4cc4-9274-c9aaf2bdbf02.png)  
 哈希结果  
