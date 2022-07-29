@@ -19,6 +19,16 @@ class Node:
         return hashlib.sha256(tmp.encode('utf-8')).hexdigest()
 
 
+listofnodes = []
+
+
+def order(root: Node):  # 遍历树的到所有的节点
+    if root:
+        listofnodes.append(root.hash)
+        order(root.leftNode)
+        order(root.rightNode)
+
+
 # 定义Merkle_Tree:
 class Merkle_Tree:
     def __init__(self, leaf: list[Node]):  # 创建merkle tree时传入一个包含叶节点的列表类型
@@ -65,23 +75,13 @@ class Merkle_Tree:
             return " is exclusion "
 
 
-listofnodes = []
-
-
-def order(root: Node):  # 遍历树的到所有的节点
-    if root:
-        listofnodes.append(root.hash)
-        order(root.leftNode)
-        order(root.rightNode)
-
-
 if __name__ == "__main__":
-    ls_nodes = []
     raw_str = "qwertyuioplkjhgfdsazxcvbnm1230456789"
     check_hash = ''  # 随机选取一个64字节字符串当作hash并查看是否在树中
     for i in range(64):
         check_hash = ''.join(random.choice(raw_str))
     # 生成100k个叶节点
+    ls_nodes = []
     for i in range(100000):
         n = Node()
         n.value = ''.join(random.sample(string.ascii_letters, 8))
