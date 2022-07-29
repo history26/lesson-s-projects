@@ -25,7 +25,7 @@ sm3轮函数中内置的函数Tj,FF,GG。 逻辑较为简单，GG因为包含了
 ![8)C@J~KJZ{SJXR4WD(1U~ Y](https://user-images.githubusercontent.com/96007188/181724975-94c9015d-1adf-4c66-9205-ecd6205be361.png)  
 主程序，能够计时并且调整对前n位进行攻击。  
   
-##代码运行截图：  
+## 代码运行截图：  
 代码可以直接跑起来。  
 对前8位，结果如下：  
 ![image](https://user-images.githubusercontent.com/96007188/181725291-a0a27322-0b3c-40dc-bfab-3eeaf3f19412.png)  
