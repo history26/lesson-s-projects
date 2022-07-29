@@ -1,2 +1,2 @@
-# lesson-s-projects
+# lesson-projects
 sdu pratical lesson's projects
