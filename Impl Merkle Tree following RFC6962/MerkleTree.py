@@ -25,7 +25,6 @@ class Merkle_Tree:
         # 定义叶节点
         self.leaf = leaf
         self.root = Node()
-        self.listofnodes = []
 
     def print_root(self):
         print("root: ", self.root)
@@ -59,22 +58,27 @@ class Merkle_Tree:
 
     # check inclusion or exclusion
 
-    def order(self, root: Node):
-        self.listofnodes.append(root.hash)
-        self.check(root.leftNode)
-        self.check(root.rightNode)
-
     def check(self, check_hash: str):
-        if check_hash in self.listofnodes:
-            print(" specified element is inclusion ")
+        if check_hash in listofnodes:
+            return " is inclusion "
         else:
-            print(" specified element is exclusion ")
+            return " is exclusion "
+
+
+listofnodes = []
+
+
+def order(root: Node):  # 遍历树的到所有的节点
+    if root:
+        listofnodes.append(root.hash)
+        order(root.leftNode)
+        order(root.rightNode)
 
 
 if __name__ == "__main__":
     ls_nodes = []
     raw_str = "qwertyuioplkjhgfdsazxcvbnm1230456789"
-    check_hash = ''  # 随机选取一个字符串当作hash并查看是否在树种
+    check_hash = ''  # 随机选取一个64字节字符串当作hash并查看是否在树中
     for i in range(64):
         check_hash = ''.join(random.choice(raw_str))
     # 生成100k个叶节点
@@ -85,6 +89,8 @@ if __name__ == "__main__":
     mymerkletree = Merkle_Tree(ls_nodes)
     mymerkletree.create_tree()
     mymerkletree.print_root()
-    mymerkletree.order(mymerkletree.root)
-    mymerkletree.check(check_hash)
-    mymerkletree.check(mymerkletree.root.hash)
+    order(mymerkletree.root)
+    # 查看随机生成的字符串是否在树中
+    print("随机字符串 ", mymerkletree.check(check_hash))
+    # 查看根节点是否在树中来验证正确性
+    print("root ", mymerkletree.check(mymerkletree.root.hash))
