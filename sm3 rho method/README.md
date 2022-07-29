@@ -1,3 +1,3 @@
-# MPT
-本项目中有关Merkle Patricia trie的实现代码引用于https://github.com/chacaldev/merkle-patricia-trie  
-
+#sm3 birthday attack  
+此项目为sm3算法的运用rhomethod的攻击  
+##函数中代码说明：
