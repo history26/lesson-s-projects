@@ -16,8 +16,9 @@ sm3轮函数中内置的函数Tj,FF,GG,逻辑较为简单，GG因为包含了二
 ![0T%FRG8M@O}}F)}@`OQBO F](https://user-images.githubusercontent.com/96007188/181723432-910c6aa2-5a15-449e-8174-0d00baaa93a5.png)  
 压缩函数，计算逻辑如下图：  
 ![image](https://user-images.githubusercontent.com/96007188/181723893-d5e2676a-2220-4f2b-ab84-095eef909bda.png)  
-![image](https://user-images.githubusercontent.com/96007188/181724089-438a8e8b-fbf9-4285-b190-40538c89afd6.png)  
-轮函数，其中迭代调用了压缩函数，最后是sm3的调用函数，函数输入的消息为int类型，输出的为二进制字符串。
+![5}Q3I7Z$ PD23V)%TC$ _KG](https://user-images.githubusercontent.com/96007188/181729836-c55c96f8-b50e-4f15-bb19-bd7c460c42bb.png)  
+
+sm3杂凑函数
 ![image](https://user-images.githubusercontent.com/96007188/181724296-d726f277-3156-42a8-8e27-6f6c057f4def.png)  
 简易生日攻击部分，首先选取2^(n/2)个随机数，然后遍历检查它们中是否存在两个数的杂凑值的前n位相等，存在则攻击成功，并且输出结果。  
 ![8)C@J~KJZ{SJXR4WD(1U~ Y](https://user-images.githubusercontent.com/96007188/181724975-94c9015d-1adf-4c66-9205-ecd6205be361.png)  
@@ -30,6 +31,5 @@ sm3轮函数中内置的函数Tj,FF,GG,逻辑较为简单，GG因为包含了二
 如图，很快完成了攻击。  
 对前16位，结果如下：  
 ![image](https://user-images.githubusercontent.com/96007188/181725521-bf44b602-23bd-4d52-9274-c8ae6a8b1b2a.png)  
-如图，花了比较长的时间，但也找到了碰撞。  
-对前20位：  
-对前32位，花了很长时间也不能成功。  
+如图，花了150秒，即比较长的时间，但也找到了碰撞。    
+对更多位数，花费很长时间也不能成功。  
