@@ -91,20 +91,17 @@ def extance(m):#将消息按照规则扩展到长度为512的整数倍
     m=m+'1'+'0'*k+inttobin(len(m), 64)
     return m
 
-def roundfunc(p):#实现压缩过程的轮函数
-    n=int(len(p)/512)
+def sm3(m):#迭代调用CF，实现sm3杂凑函数
+    m=extance(m)
+    n=int(len(m)/512)
     r=[]
     r.append(inttobin(V,256))
     for i in range(n):
-        w,w1 = exten(p[512*i:512*(i+1)])
+        w,w1 = exten(m[512*i:512*(i+1)])
         t=CF(r[i],w, w1)
         res=inttobin(t,256)
         r.append(res)
     return r[n]
-def sm3(m):#输入为整数，输出为二进制字符串
-    m1=extance(m)
-    res=roundfunc(m1)
-    return res
 
 def attack(n):#生日攻击的过程，由于计算力，只研究前n位的碰撞
     for i in range(2**n):
