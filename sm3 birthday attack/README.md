@@ -1,7 +1,7 @@
 ## sm3 birthday attack
 此项目为sm3算法的naive birthday attack的实现。其中也包括sm3算法本体的实现。  
-sm3结构设计有参考https://blog.csdn.net/weixin_42369053/article/details/118303945?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-118303945-blog-121637732.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-118303945-blog-121637732.pc_relevant_default&utm_relevant_index=2
-#函数中代码说明：  
+sm3结构设计有参考https://blog.csdn.net/weixin_42369053/article/details/118303945?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-118303945-blog-121637732.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-118303945-blog-121637732.pc_relevant_default&utm_relevant_index=2  
+# 函数中代码说明：  
 ![VU OGA`A7F0MSZ4M0ZV6`TX](https://user-images.githubusercontent.com/96007188/181716475-bac63304-5619-40a7-9cb4-2ad3c5444830.png)  
 此函数为将整数转化为指定位数的二进制数的函数，方便了用户直接输入和取随机数作为输入。  
 ![4WI8XY2~4$U6K~F}43SFM`3](https://user-images.githubusercontent.com/96007188/181718745-e651fee6-8341-45f3-bdc5-fd741e9d458a.png)  
@@ -16,4 +16,8 @@ sm3轮函数中内置的函数Tj,FF,GG,逻辑较为简单，GG因为包含了二
 ![0T%FRG8M@O}}F)}@`OQBO F](https://user-images.githubusercontent.com/96007188/181723432-910c6aa2-5a15-449e-8174-0d00baaa93a5.png)  
 压缩函数，计算逻辑如下图：  
 ![image](https://user-images.githubusercontent.com/96007188/181723893-d5e2676a-2220-4f2b-ab84-095eef909bda.png)  
+![image](https://user-images.githubusercontent.com/96007188/181724089-438a8e8b-fbf9-4285-b190-40538c89afd6.png)  
+轮函数，其中迭代调用了压缩函数，最后是sm3的调用函数，函数输入的消息为int类型，输出的为二进制字符串。
+![image](https://user-images.githubusercontent.com/96007188/181724296-d726f277-3156-42a8-8e27-6f6c057f4def.png)  
+简易生日攻击部分，首先选取2^(n/2)个随机数，然后遍历检查它们中是否存在两个数的杂凑值的前n位相等，存在则攻击成功。  
 
