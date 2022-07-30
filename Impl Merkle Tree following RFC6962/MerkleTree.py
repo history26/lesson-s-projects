@@ -38,8 +38,8 @@ class Merkle_Tree:
 
     def print_root(self):
         print("root: ", self.root)
-        print("value", self.root.value)
-        print("hash", self.root.hash)
+        print("root value", self.root.value)
+        print("root hash", self.root.hash)
 
     def create_tree(self):
         leaf_nodes = copy.deepcopy(self.leaf)
@@ -76,10 +76,10 @@ class Merkle_Tree:
 
 
 if __name__ == "__main__":
-    raw_str = "qwertyuioplkjhgfdsazxcvbnm1230456789"
-    check_hash = ''  # 随机选取一个64字节字符串当作hash并查看是否在树中
-    for i in range(64):
-        check_hash = ''.join(random.choice(raw_str))
+    length_of_string = 64
+    check_hash = ''.join(
+        random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(length_of_string))
+
     # 生成100k个叶节点
     ls_nodes = []
     for i in range(100000):
@@ -91,6 +91,7 @@ if __name__ == "__main__":
     mymerkletree.print_root()
     order(mymerkletree.root)
     # 查看随机生成的字符串是否在树中
-    print("随机字符串 ", mymerkletree.check(check_hash))
+    print("随机hash为 ", check_hash)
+    print("随机hash ", mymerkletree.check(check_hash))
     # 查看根节点是否在树中来验证正确性
-    print("root ", mymerkletree.check(mymerkletree.root.hash))
+    print("root hash ", mymerkletree.check(mymerkletree.root.hash))
