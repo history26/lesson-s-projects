@@ -8,7 +8,7 @@ sdu pratical lesson's projects
 # 已完成项目名称及其完成人  
 | implement the naive birthday atack of redeced SM3  
 | implement the Rho method of reduced SM3  
-完成人：宋元铭  
+完成人:宋元铭  
 | Find a key with hash value  
 | research report on MPT  
 完成人:田国鑫  
@@ -20,5 +20,5 @@ sdu pratical lesson's projects
 完成人:李兆磊  
 | impl SM2 with RFC6979  
 | Implement the above ECMH scheme Decrypt  
-完成人：刘坤烨
+完成人:刘坤烨
 
