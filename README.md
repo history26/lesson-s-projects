@@ -14,9 +14,6 @@ sdu pratical lesson's projects
 完成人:田国鑫  
 | Find a 64-byte message under some k fulfilling that their hash value is  symmetrical  
 | lmpl Merkle Tree following RFC6962  
-·Construct a Merkle tree with 10w leaf nodes  
-·Build inclusion proof for specified element  
-·Build exclusion proof for specified element  
 完成人:李兆磊  
 | impl SM2 with RFC6979  
 | Implement the above ECMH scheme Decrypt  
